@@ -1,0 +1,25 @@
+25  l
+26  vim Makefile
+27  make
+28  l
+29  vim Makefile
+30  make
+31  vim Makefile
+32  make
+33  vim Makefile
+34  make
+35  l
+36  ./main
+37  l
+38  vim main.c
+39  vim main.c
+40  gs
+41  ga
+42  gs
+43  gcmsg "assignment 1"
+44  vim main.c
+45  make
+46  ./main
+47  ga
+48  gcmsg "added 5 to average calculation"
+
