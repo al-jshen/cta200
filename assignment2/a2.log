@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2020.5.4)  7 MAY 2020 12:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2020.5.4)  7 MAY 2020 12:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -238,7 +238,7 @@ s/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/
 amsfonts/cm/cmr17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
 7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/sh
 are/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on a2.pdf (4 pages, 213081 bytes).
+Output written on a2.pdf (4 pages, 213083 bytes).
 PDF statistics:
  58 PDF objects out of 1000 (max. 8388607)
  38 compressed objects within 1 object stream
