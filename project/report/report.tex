@@ -30,7 +30,6 @@
 \date{\today}
 \maketitle
 
-% problem 1
 \section*{Spectral Fitting}
 
 We begin with Fig. \ref{fig:initial_spectra} of the three multiple images of galaxy 2 (Gal. 2a, 2b, and 2c) as defined in \cite{MacKenzie2014}. The first spectrum, for Gal. 2a, appears to be entirely noise, as there is no distinct peak like there is for the other two spectra. In the second and third panels of the figure, there are peaks in the intensity at around 88 GHz. 
@@ -45,38 +44,32 @@ We begin with Fig. \ref{fig:initial_spectra} of the three multiple images of gal
 The Levenberg–Marquardt algorithm\footnote{https://en.wikipedia.org/wiki/Levenberg-Marquardt\_algorithm} from \code{astropy.modeling}, which minimizes the sum of squared residuals (SSR), was used to fit a 1D Gaussian model to each of the spectra. The results are shown in Fig. \ref{fig:gaussian_fit}. As expected, the algorithm had some trouble identifying a distinct peak for Gal. 2a, and as a result, the fitted Gaussian line for that image is much broader and has a smaller amplitude than the lines for the other two images.
 
 The peak observed frequencies can be found in Table \ref{table:peaks_zs}, along with the full width at half maximum (FWHM) for each fit. For a Gaussian, the FWHM can be calculated\footnote{https://mathworld.wolfram.com/GaussianFunction.html} from the standard deviation $\sigma$ as 
-\begin{align*}
+\begin{align}\label{eqn:fwhm}
 	\rm{FWHM} = 2\sqrt{2\log{2}}\sigma.
-\end{align*}
+\end{align}
 
 \begin{figure}[!htbp]
     \centering
     \includegraphics[width=0.8\linewidth]{../figs/gaussian_fit.png}
-    \caption{Plot of the spectra of each lensed image, with a 1D Gaussian fit in orange. There are distinct peaks for the spectra of Gal. 2b and 2c.}
+	\caption{Plot of the spectra of each lensed image, with a 1D Gaussian fit in orange.} 
     \label{fig:gaussian_fit}
 \end{figure}
 
 Spectroscopic redshift can be calculated for an object using the formula 
-\begin{align*}
+\begin{align}\label{eqn:redshift}
 	z = \frac{v}{v_0} - 1,
-\end{align*}
+\end{align}
 where $v$ is the observed frequency and $v_0$ is the rest-frame frequency. In thie case, the target transition in these spectra is the $^{12}$CO(J=3-2) transition, which has a rest-frame frequency of 345.8 GHz \citep{Carilli2013}. The observed frequency for each of the images was taken to be the mean of the Gaussian fit. The results are given in Table \ref{table:peaks_zs}, and they are in line with what is expected (see. Table 1 in \cite{MacKenzie2014}).
 
 Using the calculated spectroscopic redshift, it is possible to convert the observed frequencies into radio velocities. First, the rest frequency of the $^{12}$CO(J=3-2) transition is shifted so velocities are relative to a redshift (ie. the source has zero velocity):
-\begin{align*}
+\begin{align}\label{eqn:restfreq_shift}
 	v_s = \frac{v_0}{z+1},
-\end{align*}
+\end{align}
 where $v_s$ is the shifted rest frequency, $v_0$ is the unshifted rest frequency, and $z$ is the redshift of the source. Then, the radio velocity is given by 
-\begin{align*}
+\begin{align}\label{eqn:radio_vel}
 	V_{rad} = (1 - \frac{v}{v_s})c,
-\end{align*}
-where $V_{rad}$ is the radio velocity, $v$ and $v_s$ are defined as before, and $c$ is the speed of light. 
-
-For each of the galaxies, the root mean square (RMS) of the intensity of the spectrum was calculated. This was done in order to better understand whether those detections are merely noise or not. For the spectra of Gal. 2b and 2c, the line detections were masked out, and the calculation was done on the rest of the data. The equation for RMS, given $n$ data points $x_1, \ldots, x_n$, is 
-
-\begin{align*}
-	\rm{RMS} = \sqrt{\frac{1}{n}\sum_i^nx_i^2}.
-\end{align*}
+\end{align}
+where $V_{rad}$ is the radio velocity, $v$ and $v_s$ are defined as before, and $c$ is the speed of light. Using the radio velocity, Fig. \ref{fig:redshift_axis} was created. Apart from the x-axis now being labelled with both radio velocity (bottom) and observed frequency (top), it is identical to Fig. \ref{fig:gaussian_fit}.
 
 \begin{figure}[!htbp]
     \centering
@@ -84,6 +77,12 @@ For each of the galaxies, the root mean square (RMS) of the intensity of the spe
 	\caption{Plot of the spectra with a 1D Gaussian fit (same as Fig \ref{fig:gaussian_fit}). Bottom x-axis is in radio velocity (km/s) with reference to the redshift to each image. Top x-axis is in observed frequency (GHz). y-axis is in intensity (Jy/beam). Note that the radio velocity increases going to the left, whereas the frequency increases going to the right.}
     \label{fig:redshift_axis}
 \end{figure}
+
+For each of the galaxies, the root mean square (RMS) of the intensity of the spectrum was calculated. This was done in order to better understand whether those detections are merely noise or not. For the spectra of Gal. 2b and 2c, the line detections were masked out, and the calculation was done on the rest of the data. The equation for RMS, given $n$ data points $x_1, \ldots, x_n$, is 
+\begin{align}\label{eqn:rms}
+	\rm{RMS} = \sqrt{\frac{1}{n}\sum_i^nx_i^2}.
+\end{align}
+
 
 \begin{table}[!htbp]
 \centering
@@ -101,8 +100,24 @@ ID  & GHz                     & FWHM       &      & \\[0.1cm]
 \label{table:peaks_zs}
 \end{table}
 
-% problem 2
+\newpage
 \section*{Measuring Line Luminosity}
+
+To obtain the line flux $S_{CO(3-2)}\Delta v$, the areas under the Gaussian curves for each of the spectra were integrated using Simpson's rule with the function \code{scipy.integrate.simps}. 
+
+Using the \code{astropy.cosmology} package, the luminosity distances $D_L$ to each of the images was calculated. The assumptions made were:
+\begin{itemize}
+	\item a flat $\Lambda$-CDM cosmology,
+	\item Hubble's constant at $z=0$ of $H_0 = 70~\rm{km\,s^{-1}\,Mpc^{-1}}$,
+	\item temperature of the cosmic microwave background (CMB) at $z=0$ of $T_{0_{CMB}} = 2.725~{\rm K}$, and
+	\item density of non-relativistic matter at $z=0$, in units of the critical density, of $\Omega_M = 0.3$.
+\end{itemize}
+
+From the line flux and the luminosity distance, Eqn. 3 from \cite{Solomon1992} can be used to find the line luminosity:
+\begin{align}\label{eqn:linelum}
+	L'_{CO} = \frac{c^2}{2k}S_{CO}\Delta v \frac{D_L^2}{v^2 (1+z)^3},
+\end{align}
+where $L'_{CO}$ is the line luminosity and $k = 1.381\times 10^{-23}~{\rm J\,K^{-1}}$ is the Boltzmann constant. The line luminosity was computed for each of the images, and can be found in Table \ref{table:line_lum}.
 
 \begin{table}[!htbp]
 \centering
@@ -116,38 +131,54 @@ ID  & $\rm{Jy\,km\,s^{-1}}$ & Mpc   & $\rm{K\,km\,s^{-1}\,pc^2}$ \\[0.1cm]
 2c & $4.36\times 10^{-5}$ & $2.46\times 10^{4}$ & $1.83\times 10^{6}$ \\
 \hline
 \end{tabular}
-\caption{Table to test captions and labels}
-\label{table:2}
+\caption{Line flux for the J=3-2 transition for $^{12}$CO, luminosity distance, and total line luminosity for each of the images.}
+\label{table:line_lum}
 \end{table}
 
-\section*{Measuring Gas Mass}
+\section*{Measuring Gas Mass\footnote{The following analysis was done only for Gal. 2b and 2c, since those were the only ones with a clear emission line detection.}}
+
+For each of the images with a detectable emission line, the line luminosity of the $^{12}$CO(J=3-2) transition was used to estimate the line luminosity for the ground state transition $^{12}$CO(J=1-0). Table 2 in \cite{Carilli2013} gives the ratio $L'_{CO(3-2)} / L'_{CO(1-0)} = 0.27$ for the Milky Way. Under the assumption that the spectral energy distribution of the galaxy in question is similar to that the Milky Way, a simple rearrangement allows us to calculate the expected line luminosity for the ground state transition:
+\begin{align}\label{eqn:ground_linelum}
+	L'_{CO(1-0)} = \frac{L'_{CO(3-2)}}{0.27}.
+\end{align}
+
+We can use the conversion factor $\alpha_{CO}$, which gives the ratio of total molecular gas mass in $M_\odot$ to the total CO line luminosity in ${\rm K\,km\,s^{-1}\,pc^2}$, to calculate the apparent cold gas mass. Assuming a ratio similar to that of the Milky Way, the apparent cold gas mass is given by 
+\begin{align}\label{eqn:gas_mass}
+	M_{gas} = L'_{CO(1-0)} \alpha_{CO},
+\end{align}
+where $\alpha_{CO} = 4.6~{\rm M_\odot\,(K\,km\,s^{-1}\,pc^2)^-1}$ for the Milky Way. The gas mass is calculated using the line luminosities calculated for Gal. 2b and 2c and are given in Table \ref{table:gas_mass}.
+
+In order to take into account the effects of gravitational lensing, the amplification factor for each image (from \cite{MacKenzie2014}, also given in Table \ref{table:gas_mass}) due to the lensing is used to calculate the delensed molecular gas mass of each image. Although the amplification factor is with respect to the flux density, all the calculations necessary to go from flux density to the gas mass are linear in the relevant variables (Eqn. \ref{eqn:linelum}, Eqn. \ref{eqn:ground_linelum}, Eqn. \ref{eqn:gas_mass}). Thus, we can directly apply the amplification factor to calculate the delensed gas mass. 
 
 \begin{table}[!htbp]
 \centering
-\begin{tabular}{cccc}
+\begin{tabular}{ccccc}
 \hline \\[-0.25cm]
-Gal & $L'_{CO(1-0)}$             & $M_{gas}$ & Delensed $M_{gas}$ \\
-ID  & $\rm{K\,km\,s^{-1}\,pc^2}$ & $M_\odot$ & $M_\odot$          \\[0.1cm]
+Gal & $L'_{CO(1-0)}$             & Apparent $M_{gas}$ & Amplification & Delensed $M_{gas}$ \\
+ID  & $\rm{K\,km\,s^{-1}\,pc^2}$ & $M_\odot$          &               & $M_\odot$          \\[0.1cm]
 \hline \\[-0.25cm]
-2a & $6.05\times 10^{6}$ & $2.78\times 10^{7}$ & $9.73\times 10^{6}$ \\
-2b & $8.55\times 10^{6}$ & $3.93\times 10^{7}$ & $4.86\times 10^{6}$ \\
-2c & $6.79\times 10^{6}$ & $3.13\times 10^{7}$ & $5.12\times 10^{6}$ \\
+%2a & $6.05\times 10^{6}$ & $2.78\times 10^{7}$ & 2.86 & $9.73\times 10^{6}$ \\
+2b & $8.55\times 10^{6}$ & $3.93\times 10^{7}$ & 8.1 & $4.86\times 10^{6}$ \\
+2c & $6.79\times 10^{6}$ & $3.13\times 10^{7}$ & 6.1 & $5.12\times 10^{6}$ \\
 \hline
 \end{tabular}
-\caption{Table to test captions and labels}
-\label{table:3}
+\caption{Line luminosity for the ground-state J-transition of $^{12}$CO, apparent gas mass, and intrinsic (delensed) gas mass.}
+\label{table:gas_mass}
 \end{table}
 
-\begin{align*}
-    \frac{|M_{2b} - M_{2c}|}{\frac{M_{2b}+M_{2c}}{2}} = \frac{2.6\times 10^{5}}{4.99\times 10^{6}} \simeq 5\%
-\end{align*}
+To check whether the intrinsic gas masses calculated are consistent with each other across the multiple images, we take the difference between the computed values for Gal. 2b and 2c and normalize it by their average. Doing so, we find that the values are consistent to within 6\%: 
+\begin{align}
+    \frac{|M_{2b} - M_{2c}|}{\frac{M_{2b}+M_{2c}}{2}} = \frac{2.6\times 10^{5}}{4.99\times 10^{6}} \simeq 5.3\%
+\end{align}
+where $M_{2b}$ and $M_{2c}$ are the intrinsic molecular gas masses calculated for Gal. 2b and 2c, respectively. 
 
 \section*{Wrapping Up}
+
 
 \begin{figure}[!htbp]
     \hspace{-1cm}
     \includegraphics[width=1.1\linewidth]{../figs/final.png}
-    \caption{RGB composite of MS 0451.6−0305 with F160W, F110W, and F814W filters, respectively. Multiple lensed images of Gal. 2 indicated. Spectra extracted from circles with a diameter of 1\". Bottom axes of spectra labelled in radio velocity relative to the redshift calculated for each image as in Table \ref{table:1}. Top axes in observed frequency (GHz). Side axes in intensity (Jy/beam).}
+    \caption{RGB composite of MS 0451.6−0305 with F160W, F110W, and F814W filters, respectively. Multiple lensed images of Gal. 2 indicated. Spectra extracted from circles with a diameter of 1\". Bottom axes of spectra labelled in radio velocity relative to the redshift calculated for each image as in Table \ref{table:peaks_zs}. Top axes in observed frequency (GHz). Side axes in intensity (Jy/beam).}
     \label{fig:final_oteo}
 \end{figure}
 
