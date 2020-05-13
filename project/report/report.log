@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2020.5.12)  12 MAY 2020 21:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2020.5.12)  12 MAY 2020 23:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -442,13 +442,13 @@ Package pdftex.def Info: ../figs/redshift_axis_plot.png  used on input line 76.
 (pdftex.def)             Requested size: 377.62642pt x 566.43855pt.
  [3] [4 <../figs/redshift_axis_plot.png>]
 [5]
-<../figs/final.png, id=96, 1110.1475pt x 867.24pt>
+<../figs/final.png, id=102, 1110.1475pt x 867.24pt>
 File: ../figs/final.png Graphic file (type png)
 <use ../figs/final.png>
-Package pdftex.def Info: ../figs/final.png  used on input line 180.
+Package pdftex.def Info: ../figs/final.png  used on input line 183.
 (pdftex.def)             Requested size: 519.23723pt x 405.63115pt.
 
-Overfull \hbox (21.18658pt too wide) in paragraph at lines 179--181
+Overfull \hbox (21.18658pt too wide) in paragraph at lines 182--184
 []  [] 
  []
 
@@ -460,7 +460,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.181 ...(GHz). Side axes in intensity (Jy/beam).}
+l.184 ...nd the side axes in intensity (Jy/beam).}
                                                   
 You may provide a definition with
 \DeclareUnicodeCharacter 
@@ -473,31 +473,31 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.181 ...(GHz). Side axes in intensity (Jy/beam).}
+l.184 ...nd the side axes in intensity (Jy/beam).}
                                                   
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
-(./report.bbl [6] [7 <../figs/final.png>]) 
+[6] [7 <../figs/final.png>] (./report.bbl) 
 AED: lastpage setting LastPage
 [8]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 204.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 204.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 213.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 213.
  (./report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 204.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 204.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 213.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 213.
 Package rerunfilecheck Info: File `report.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 204.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 213.
  ) 
 Here is how much of TeX's memory you used:
  7364 strings out of 480608
- 106118 string characters out of 5910020
- 385899 words of memory out of 5000000
- 23072 multiletter control sequences out of 15000+600000
+ 106125 string characters out of 5910020
+ 386216 words of memory out of 5000000
+ 23071 multiletter control sequences out of 15000+600000
  544742 words of font info for 73 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 34i,11n,29p,648b,429s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 34i,11n,29p,798b,335s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fon
 ts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/publi
@@ -511,10 +511,10 @@ r/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-
 dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type
 1/public/amsfonts/cm/cmtt10.pfb></usr/share/texmf-dist/fonts/type1/public/cm-su
 per/sfrm1095.pfb>
-Output written on report.pdf (8 pages, 1303390 bytes).
+Output written on report.pdf (8 pages, 1307772 bytes).
 PDF statistics:
- 182 PDF objects out of 1000 (max. 8388607)
- 146 compressed objects within 2 object streams
- 37 named destinations out of 1000 (max. 500000)
+ 194 PDF objects out of 1000 (max. 8388607)
+ 158 compressed objects within 2 object streams
+ 38 named destinations out of 1000 (max. 500000)
  21 words of extra memory for PDF output out of 10000 (max. 10000000)
 
