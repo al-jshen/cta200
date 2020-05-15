@@ -1,12 +1,12 @@
 # Fdb version 3
-["bibtex report"] 1589501347 "report.aux" "report.bbl" "report" 1589501815
+["bibtex report"] 1589502074 "report.aux" "report.bbl" "report" 1589502074
   "./aasjournal.bst" 1589315522 37930 c2368a73b82a7c192c7ab34d16c71a72 ""
-  "report.aux" 1589501348 7281 96567dd8877f10b763fcd5b7173a0931 "pdflatex"
+  "report.aux" 1589501815 7281 d69f45eb4b641367249a3d826e1ed6c4 "pdflatex"
   "sources.bib" 1589388768 9741 933e32655348aec83a26a104313f9408 ""
   (generated)
   "report.bbl"
   "report.blg"
-["pdflatex"] 1589501815 "report.tex" "report.pdf" "report" 1589501815
+["pdflatex"] 1589502074 "report.tex" "report.pdf" "report" 1589502074
   "../figs/final.png" 1589382555 1170401 5e8e538d5332811335e47153c91bf7f2 ""
   "../figs/gaussian_fit.png" 1589223059 83000 62c427a98bcc65446c1386ee7a34bed3 ""
   "../figs/initial_spectra.png" 1589231185 44430 dc2b3868f5ff1cedfe0b654e5e775d20 ""
@@ -121,12 +121,12 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1587899213 33301 a3134070eacafb10b1f371612ce2650d ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1589321265 4676539 17a6f59e659c7f6742ee68e9a4a9f90e ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1589321261 2513077 3330978d110cf56a8fb16e86ed4d14ac ""
-  "report.aux" 1589501348 7281 96567dd8877f10b763fcd5b7173a0931 "pdflatex"
-  "report.bbl" 1589501347 1655 3e7ac1ee6c2cc49f77076ec98716b164 "bibtex report"
-  "report.out" 1589501347 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "report.tex" 1589501814 16208 59c77ce898e212082c8fea3e3b09f1bb ""
+  "report.aux" 1589501815 7281 d69f45eb4b641367249a3d826e1ed6c4 "pdflatex"
+  "report.bbl" 1589502074 1655 3e7ac1ee6c2cc49f77076ec98716b164 "bibtex report"
+  "report.out" 1589501815 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "report.tex" 1589502073 16209 ab5c59e934b69321565c199ed812ec16 ""
   (generated)
-  "report.pdf"
   "report.aux"
   "report.out"
   "report.log"
+  "report.pdf"
