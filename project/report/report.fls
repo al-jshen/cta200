@@ -182,9 +182,9 @@ INPUT ../figs/perturbations.pdf
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmti8.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmti7.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/jknappen/ec/tcrm1095.tfm
-INPUT ../figs/final.png
-INPUT ../figs/final.png
-INPUT ../figs/final.png
+INPUT ../figs/final.pdf
+INPUT ../figs/final.pdf
+INPUT ../figs/final.pdf
 INPUT report.bbl
 INPUT report.bbl
 INPUT report.aux

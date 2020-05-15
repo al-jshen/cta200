@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2020.5.12)  15 MAY 2020 14:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2020.5.12)  15 MAY 2020 14:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -467,11 +467,11 @@ Package pdftex.def Info: ../figs/perturbations.pdf  used on input line 90.
 (pdftex.def)             Requested size: 283.22162pt x 566.46503pt.
 [3] [4 <../figs/velocity_axis_plot.pdf>] [5 <../figs/perturbations.pdf>]
 [6] [7]
-<../figs/final.png, id=313, 1156.32pt x 867.24pt>
-File: ../figs/final.png Graphic file (type png)
-<use ../figs/final.png>
-Package pdftex.def Info: ../figs/final.png  used on input line 195.
-(pdftex.def)             Requested size: 519.23723pt x 389.42072pt.
+<../figs/final.pdf, id=313, 3613.5pt x 2710.125pt>
+File: ../figs/final.pdf Graphic file (type pdf)
+<use ../figs/final.pdf>
+Package pdftex.def Info: ../figs/final.pdf  used on input line 195.
+(pdftex.def)             Requested size: 519.23723pt x 389.42238pt.
 
 Overfull \hbox (21.18658pt too wide) in paragraph at lines 194--196
 []  [] 
@@ -503,7 +503,7 @@ l.196 ...nd the side axes in intensity (Jy/beam).}
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
-[8] [9 <../figs/final.png>] (./report.bbl) 
+[8] [9 <../figs/final.pdf>] (./report.bbl) 
 AED: lastpage setting LastPage
 [10]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 226.
@@ -516,8 +516,8 @@ Package rerunfilecheck Info: File `report.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 226.
  ) 
 Here is how much of TeX's memory you used:
- 7377 strings out of 480608
- 106464 string characters out of 5910020
+ 7376 strings out of 480608
+ 106484 string characters out of 5910020
  387328 words of memory out of 5000000
  23075 multiletter control sequences out of 15000+600000
  543309 words of font info for 66 fonts, out of 8000000 for 9000
@@ -538,10 +538,10 @@ dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type
 ts/cm/cmti8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pf
 b></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/share/t
 exmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb>
-Output written on report.pdf (10 pages, 1899192 bytes).
+Output written on report.pdf (10 pages, 5428754 bytes).
 PDF statistics:
- 415 PDF objects out of 1000 (max. 8388607)
- 210 compressed objects within 3 object streams
+ 427 PDF objects out of 1000 (max. 8388607)
+ 218 compressed objects within 3 object streams
  43 named destinations out of 1000 (max. 500000)
  26 words of extra memory for PDF output out of 10000 (max. 10000000)
 
