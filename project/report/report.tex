@@ -56,9 +56,9 @@ The Levenberg–Marquardt algorithm\footnote{\url{https://en.wikipedia.org/wiki/
 
 Spectroscopic redshift can be calculated for an object using the formula 
 \begin{align}\label{eqn:redshift}
-	z = \frac{v}{v_0} - 1,
+	z = \frac{\nu}{\nu_0} - 1,
 \end{align}
-where $v$ is the observed frequency and $v_0$ is the rest-frame frequency. In thie case, the target transition in these spectra is the $^{12}$CO(J=3-2) transition, which has a rest-frame frequency of 345.8 GHz \citep{Carilli2013}. The observed frequency for each of the images was taken to be the mean of the Gaussian fit. The results are given in Table \ref{table:peaks_zs}. They are in line with what is expected, accounting for uncertainties---Table 1 in \cite{MacKenzie2014} gives the redshift of Gal. 2 as $2.91\pm0.04$. 
+where $\nu$ is the observed frequency and $\nu_0$ is the rest-frame frequency. In thie case, the target transition in these spectra is the $^{12}$CO(J=3-2) transition, which has a rest-frame frequency of 345.8 GHz \citep{Carilli2013}. The observed frequency for each of the images was taken to be the mean of the Gaussian fit. The results are given in Table \ref{table:peaks_zs}. They are in line with what is expected, accounting for uncertainties---Table 1 in \cite{MacKenzie2014} gives the redshift of Gal. 2 as $2.91\pm0.04$. 
 }
 
 Using the calculated spectroscopic redshift, it is possible to convert the observed frequencies into radio velocities. First, the rest frequency of the $^{12}$CO(J=3-2) transition is shifted so velocities are relative to a redshift (ie. the source has zero velocity):
@@ -125,7 +125,7 @@ Using the \code{astropy.cosmology} package, the luminosity distances $D_L$ to ea
 
 From the line flux and the luminosity distance, Eqn. 3 from \cite{Solomon1992} can be used to find the line luminosity:
 \begin{align}\label{eqn:linelum}
-	L'_{CO} = \frac{c^2}{2k}S_{CO}\Delta v \frac{D_L^2}{v^2 (1+z)^3},
+	L'_{CO} = \frac{c^2}{2k}S_{CO}\Delta v \frac{D_L^2}{\nu^2 (1+z)^3},
 \end{align}
 where $L'_{CO}$ is the line luminosity and $k = 1.381\times 10^{-23}~{\rm J\,K^{-1}}$ is the Boltzmann constant. The line luminosity was computed for each of the images, and can be found in Table \ref{table:line_lum}.
 
