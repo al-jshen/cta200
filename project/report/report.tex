@@ -1,5 +1,5 @@
 \documentclass[11pt]{article}
-\usepackage[top=2cm, bottom=3.cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage[top=2.2cm, bottom=3.cm, left=2.5cm, right=2.5cm]{geometry}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath,amsthm,amsfonts,amssymb,amscd}
 \usepackage{lastpage}
@@ -11,14 +11,15 @@
 \bibliographystyle{aasjournal}
 
 \setlength{\parindent}{0.0in}
-\setlength{\parskip}{0.05in}
+\setlength{\parskip}{0.8em}
+\renewcommand{\baselinestretch}{1.}
 
 \hypersetup{%
   colorlinks=true,
   linkcolor=blue,
   linkbordercolor={0 0 1},
   citecolor=blue,
-  urlcolor=blue,
+  urlcolor=black,
 }
 
 \newcommand{\code}{\texttt}
@@ -32,26 +33,23 @@
 
 \section*{Spectral Fitting}
 
-We begin with Fig. \ref{fig:initial_spectra} of the three multiple images of galaxy 2 (Gal. 2a, 2b, and 2c) as defined in \cite{MacKenzie2014}. The first spectrum, for Gal. 2a, is noisy, and there is no distinct peak like the ones seen in the plots of the other two spectra. In the second and third panels of the figure, there are peaks in the intensity at a frequency of around 88 GHz. 
-
+Fig. \ref{fig:initial_spectra} shows the spectra for each of the three multiple images of Gal. 2 (Gal. 2a, 2b, and 2c) of the MS 0451.6−0305 cluster, as defined in \cite{MacKenzie2014}. The spectrum for Gal. 2a is noisy, and there is no distinct peak like the ones seen in the plots of the other two spectra. In the second and third panels of the figure, there are peaks in the intensity at a frequency of around 88 GHz. 
 
 \begin{figure}[!htbp]
     \centering
-    \includegraphics[width=\linewidth]{../figs/initial_spectra.png}
+    \includegraphics[width=\linewidth]{../figs/initial_spectra.pdf}
 	\caption{Plot of the extracted spectra of the multiple images of Gal. 2. Observed frequency (GHz) is plotted against the intensity (Jy/beam).}
     \label{fig:initial_spectra}
 \end{figure}
 
-The Levenberg–Marquardt algorithm\footnote{https://en.wikipedia.org/wiki/Levenberg-Marquardt\_algorithm} from \code{astropy.modeling}, which minimizes the sum of squared residuals (SSR), was used to fit a 1D Gaussian model to each of the spectra. The results are shown in Fig. \ref{fig:gaussian_fit}. As expected, the algorithm had some trouble identifying a distinct peak for Gal. 2a, and as a result, the fitted Gaussian line for that image is much broader and has a smaller amplitude than the lines for the other two images.
-
-The peak observed frequencies can be found in Table \ref{table:peaks_zs}, along with the full width at half maximum (FWHM) for each fit. For a Gaussian, the FWHM can be calculated\footnote{https://mathworld.wolfram.com/GaussianFunction.html} from the standard deviation $\sigma$ as 
+The Levenberg–Marquardt algorithm\footnote{\url{https://en.wikipedia.org/wiki/Levenberg-Marquardt_algorithm}} from \code{astropy.modeling}, which minimizes the sum of squared residuals (SSR), was used to fit a 1D Gaussian model to each of the spectra. The results are shown in Fig. \ref{fig:gaussian_fit}. As expected, the algorithm had some trouble identifying a distinct peak for Gal. 2a, and as a result, the fitted Gaussian line for that image is much broader and has a smaller amplitude than the lines for the other two images. Each fit yielded a standard deviation, and for a Gaussian, the FWHM can be calculated\footnote{\url{https://en.wikipedia.org/wiki/Full_width_at_half_maximum}} from the standard deviation $\sigma$ as 
 \begin{align}\label{eqn:fwhm}
 	\rm{FWHM} = 2\sqrt{2\log{2}}\sigma.
 \end{align}
 
 \begin{figure}[!htbp]
     \centering
-    \includegraphics[width=0.8\linewidth]{../figs/gaussian_fit.png}
+	\includegraphics[width=0.8\linewidth]{../figs/gaussian_fit.pdf}
 	\caption{Plot of the spectra of each lensed image, with a 1D Gaussian fit in orange.} 
     \label{fig:gaussian_fit}
 \end{figure}
@@ -60,7 +58,8 @@ Spectroscopic redshift can be calculated for an object using the formula
 \begin{align}\label{eqn:redshift}
 	z = \frac{v}{v_0} - 1,
 \end{align}
-where $v$ is the observed frequency and $v_0$ is the rest-frame frequency. In thie case, the target transition in these spectra is the $^{12}$CO(J=3-2) transition, which has a rest-frame frequency of 345.8 GHz \citep{Carilli2013}. The observed frequency for each of the images was taken to be the mean of the Gaussian fit. The results are given in Table \ref{table:peaks_zs}, and they are in line with what is expected (see. Table 1 in \cite{MacKenzie2014}).
+where $v$ is the observed frequency and $v_0$ is the rest-frame frequency. In thie case, the target transition in these spectra is the $^{12}$CO(J=3-2) transition, which has a rest-frame frequency of 345.8 GHz \citep{Carilli2013}. The observed frequency for each of the images was taken to be the mean of the Gaussian fit. The results are given in Table \ref{table:peaks_zs}. They are in line with what is expected, accounting for uncertainties---Table 1 in \cite{MacKenzie2014} gives the redshift of Gal. 2 as $2.91\pm0.04$. 
+}
 
 Using the calculated spectroscopic redshift, it is possible to convert the observed frequencies into radio velocities. First, the rest frequency of the $^{12}$CO(J=3-2) transition is shifted so velocities are relative to a redshift (ie. the source has zero velocity):
 \begin{align}\label{eqn:restfreq_shift}
@@ -70,41 +69,51 @@ where $v_s$ is the shifted rest frequency, $v_0$ is the unshifted rest frequency
 \begin{align}\label{eqn:radio_vel}
 	V_{rad} = (1 - \frac{v}{v_s})c,
 \end{align}
-where $V_{rad}$ is the radio velocity, $v$ and $v_s$ are defined as before, and $c$ is the speed of light. Using the radio velocity, Fig. \ref{fig:redshift_axis} was created. Apart from the x-axis now being labelled with both radio velocity (bottom) and observed frequency (top), it is identical to Fig. \ref{fig:gaussian_fit}.
+where $V_{rad}$ is the radio velocity, $v$ and $v_s$ are defined as before, and $c$ is the speed of light. Using the radio velocity, Fig. \ref{fig:velocity_axis} was created. Apart from the x-axis now being labelled with both radio velocity (bottom) and observed frequency (top), it is identical to Fig. \ref{fig:gaussian_fit}.
 
 \begin{figure}[!htbp]
     \centering
-    \includegraphics[width=0.8\linewidth]{../figs/redshift_axis_plot.png}
+    \includegraphics[width=0.8\linewidth]{../figs/velocity_axis_plot.pdf}
 	\caption{Plot of the spectra with a 1D Gaussian fit (same as Fig \ref{fig:gaussian_fit}). Bottom x-axis is in radio velocity (km/s) with reference to the redshift to each image. Top x-axis is in observed frequency (GHz). y-axis is in intensity (Jy/beam). Note that the radio velocity increases going to the left, whereas the frequency increases going to the right.}
-    \label{fig:redshift_axis}
+	\label{fig:velocity_axis}
 \end{figure}
 
-For each of the galaxies, the root mean square (RMS) of the intensity of the spectrum was calculated. This was done in order to better understand whether those detections are merely noise or not. For the spectra of Gal. 2b and 2c, the line detections were masked out, and the calculation was done on the rest of the data. The equation for RMS, given $n$ data points $x_1, \ldots, x_n$, is 
+For each of the galaxies, the root mean square (RMS) of the intensity of the spectrum was calculated. This was done in order to better understand whether any line detections are merely noise or not. For the spectra of Gal. 2b and 2c, the line detections were masked out, and the calculation was done on the rest of the data. The equation for RMS, given $n$ data points $x_1, \ldots, x_n$, is 
 \begin{align}\label{eqn:rms}
 	\rm{RMS} = \sqrt{\frac{1}{n}\sum_i^nx_i^2}.
 \end{align}
 
+For each of the multiple images, the spectrum was perturbed with Gaussian noise in order to quantify the uncertainty in the measurements. In place of the measured intensity, a data point was sampled from a Gaussian distribution centered at the measured intensity with a standard deviation of the RMS error that was previously calculated. This yields a simulated spectrum, which was then fit according to the same procedure as for the original spectrum. These simulations were run 500 times for each image, which yielded a distribution of fit parameters. The mean of the 500 peak observed frequencies found by the fits are given in Table \ref{table:peaks_zs}. Since the assumption was made that the noise was Gaussian, the error on this parameter was taken to be the standard deviation of the peak observed frequencies. This process was repeated for the line width and the line flux (given in Table \ref{table:line_lum}).
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=0.6\linewidth]{../figs/perturbations.pdf}
+	\caption{Plot of 500 realizations of the perturbed spectrum of each multiple image. The distribution of the errors was assumed to be Gaussian with a mean of the measured intensity and a standard deviation of the RMS error.}
+	\label{fig:perturbations}
+\end{figure}
+
 
 \begin{table}[!htbp]
+\begin{minipage}{\textwidth}
 \centering
 \begin{tabular}{ccccc}
 \hline \\[-0.25cm]
-Gal & Peak Observed Frequency & Line Width & RMSE & Redshift \\
-ID  & GHz                     & FWHM       &      & \\[0.1cm]
+Gal & Peak Observed Frequency & Line Width (FWHM) & RMSE & Redshift \\
+ID  & GHz                     & ${\rm km\,s^{-1}}$      &      & \\[0.1cm]
 \hline \\[-0.25cm]
-2a & 87.96 & 0.858 & 1.11E-04 & 2.93\\
-2b & 88.19 & 0.111 & 1.15E-04 & 2.92\\
-2c & 88.20 & 0.064 & 1.08E-04 & 2.92\\
+2a & $88.14 \pm 0.17$\footnote{I know the significant digits are wrong for my uncertainties but I wanted a little more precision (otherwise everything ends up being a single digit later on when the errors propagate).} & $1956 \pm 1314$ & 1.11E-04 & $2.924 \pm 0.008$  \\
+2b & $88.22 \pm 0.08$ & $768 \pm 880$  & 1.15E-04 & $2.920 \pm 0.003$\\
+2c & $88.20 \pm 0.06$ & $502 \pm 1367$ & 1.08E-04 & $2.921 \pm 0.002$\\
 \hline
 \end{tabular}
 \caption{Mean of the Gaussian fit, FWHM line width, RMS error, and redshift for each of the lensed images of Gal. 2.}
 \label{table:peaks_zs}
+\end{minipage}
 \end{table}
 
-\newpage
 \section*{Measuring Line Luminosity}
 
-To obtain the line flux $S_{CO(3-2)}\Delta v$, the areas under the Gaussian curves for each of the spectra were integrated using Simpson's rule with the function \code{scipy.integrate.simps}. 
+To obtain the line flux $S_{CO(3-2)}\Delta v$, the areas under the Gaussian curves for each of the spectra were integrated using Simpson's rule with the function \code{scipy.integrate.simps}. For the image without a clear emission detection, the flux was still calculated by integrating under the Gaussian profile, as \cite{Combes2007} finds this to yield results consistent within uncertainties. This was taken to be the upper limit of the line flux. 
 
 Using the \code{astropy.cosmology} package, the luminosity distances $D_L$ to each of the images was calculated. The assumptions made were:
 \begin{itemize}
@@ -127,16 +136,16 @@ where $L'_{CO}$ is the line luminosity and $k = 1.381\times 10^{-23}~{\rm J\,K^{
 Gal & $S_{CO(3-2)}\Delta v$ & $D_L$ & $L'_{CO(3-2)}$ \\
 ID  & $\rm{Jy\,km\,s^{-1}}$ & Mpc   & $\rm{K\,km\,s^{-1}\,pc^2}$ \\[0.1cm]
 \hline \\[-0.25cm]
-2a & $3.86\times 10^{-5}$ & $2.47\times 10^{4}$ & $1.63\times 10^{6}$ \\
-2b & $5.49\times 10^{-5}$ & $2.46\times 10^{4}$ & $2.31\times 10^{6}$ \\
-2c & $4.36\times 10^{-5}$ & $2.46\times 10^{4}$ & $1.83\times 10^{6}$ \\
+2a & $<(0.125 \pm 0.081)$ & $(2.464 \pm 0.003)\times 10^{4}$ & $<(5.25 \pm 3.42)\times 10^{9}$ \\
+2b & $0.218 \pm 0.063$ & $(2.460 \pm 0.001)\times 10^{4}$ & $(9.15 \pm 2.64)\times 10^{9}$  \\
+2c & $0.166 \pm 0.047$ & $(2.461 \pm 0.001)\times 10^{4}$ & $(6.96 \pm 1.99)\times 10^{9}$  \\
 \hline
 \end{tabular}
 \caption{Line flux for the J=3-2 transition for $^{12}$CO, luminosity distance, and total line luminosity for each of the images.}
 \label{table:line_lum}
 \end{table}
 
-\section*{Measuring Gas Mass\footnote{The following analysis was done only for Gal. 2b and 2c, since those were the only ones with a clear emission line detection.}}
+\section*{Measuring Gas Mass}
 
 For each of the images with a detectable emission line, the line luminosity of the $^{12}$CO(J=3-2) transition was used to estimate the line luminosity for the ground state transition $^{12}$CO(J=1-0). Table 2 in \cite{Carilli2013} gives the ratio $L'_{CO(3-2)} / L'_{CO(1-0)} = 0.27$ for the Milky Way. Under the assumption that the spectral energy distribution of the galaxy in question is similar to that the Milky Way, a simple rearrangement allows us to calculate the expected line luminosity for the ground state transition:
 \begin{align}\label{eqn:ground_linelum}
@@ -158,22 +167,24 @@ In order to take into account the effects of gravitational lensing, the amplific
 Gal & $L'_{CO(1-0)}$             & Apparent $M_{gas}$ & Amplification & Delensed $M_{gas}$ \\
 ID  & $\rm{K\,km\,s^{-1}\,pc^2}$ & $M_\odot$          &               & $M_\odot$          \\[0.1cm]
 \hline \\[-0.25cm]
-%2a & $6.05\times 10^{6}$ & $2.78\times 10^{7}$ & 2.86 & $9.73\times 10^{6}$ \\
-2b & $8.55\times 10^{6}$ & $3.93\times 10^{7}$ & 8.1 & $4.86\times 10^{6}$ \\
-2c & $6.79\times 10^{6}$ & $3.13\times 10^{7}$ & 6.1 & $5.12\times 10^{6}$ \\
+2a & $<(1.94 \pm 1.27)\times 10^{10}$ & $<(8.94 \pm 5.83)\times 10^{10}$ & $2.86 \pm 0.04$ & $<(3.13 \pm 2.04)\times 10^{10}$ \\
+2b & $(3.39 \pm 0.98)\times 10^{10}$  & $(1.56 \pm 0.45)\times 10^{11}$  & $8.1 \pm 0.4$   & $(1.92 \pm 0.56)\times 10^{10}$  \\
+2c & $(2.58 \pm 0.74)\times 10^{10}$  & $(1.19 \pm 0.34)\times 10^{11}$  & $6.1 \pm 0.1$   & $(1.95 \pm 0.56)\times 10^{10}$  \\
 \hline
 \end{tabular}
 \caption{Line luminosity for the ground-state J-transition of $^{12}$CO, apparent gas mass, and intrinsic (delensed) gas mass.}
 \label{table:gas_mass}
 \end{table}
 
-To check whether the intrinsic gas masses calculated are consistent with each other across the multiple images, we take the difference between the computed values for Gal. 2b and 2c and normalize it by their average. Doing so, we find that the values are consistent to within 6\%: 
+To check whether the intrinsic gas masses calculated are consistent with each other across the multiple images, we take the difference between the computed values for Gal. 2b and 2c and normalize it by their average. Doing so, we find that the values are consistent to within 2\%: 
 \begin{align}
-    \frac{|M_{2b} - M_{2c}|}{\frac{M_{2b}+M_{2c}}{2}} = \frac{2.6\times 10^{5}}{4.99\times 10^{6}} \simeq 5.3\%
+	\frac{|M_{2b} - M_{2c}|}{\frac{M_{2b}+M_{2c}}{2}} = \frac{2.04\times 10^{8}}{1.94 \times 10^{10}} \simeq 1\%
 \end{align}
 where $M_{2b}$ and $M_{2c}$ are the intrinsic molecular gas masses calculated for Gal. 2b and 2c, respectively. 
 
 \section*{Wrapping Up}
+
+The simulations from Fig. \ref{fig:perturbations} are based on the assumption that errors are distributed normally. These simulations were used to generate the parameters seen in Table \ref{table:peaks_zs}, which then served as the basis for further calculations. These simulations were also used to quantify the uncertainty in the measurements, and it is possible that they were under or overestimated if the assumption does not hold. 
 
 The conversion factor $\alpha_{CO}$, even within the Milky Way, only holds to a factor of two \citep{Carilli2013}. It is also uncertain that the assumption that the CO to molecular gas mass ratio of the galaxy in question is similar to that of the Milky Way: there are many factors to consider. For example, the metallicity and pressure of the interstellar medium (ISM) play an important role in determining $\alpha_{CO}$. Furthermore, with a far-infrared luminosity of $L_{FIR} = (6.7 \pm 0.6)\times 10^{11}~{\rm L_\odot}$, this galaxy can be classified as a luminous infrared galaxy (LIRG), for which the Milky Way conversion factor is unsuitably high \citep{Carilli2013}. 
 
@@ -182,7 +193,7 @@ There is also uncertainty in the CO excitation ladder (ie. the relative strength
 \begin{figure}[!htbp]
     \hspace{-1cm}
     \includegraphics[width=1.1\linewidth]{../figs/final.png}
-    \caption{RGB composite of MS 0451.6−0305 with F160W, F110W, and F814W filters, respectively. A percentile value of 99.85 was used to determine the maximum pixel value for the colourscale in the red and green channels, and a value of 99.0 was used in the blue channel. The multiple lensed images of Gal. 2 are indicated with white text. The spectra are extracted from circles with a diameter of 1", indicated in red. The bottom axes of the spectra are labelled in radio velocity, relative to the redshift calculated for each image, as given in Table \ref{table:peaks_zs}. The top axes are in observed frequency (GHz), and the side axes in intensity (Jy/beam).}
+	\caption{RGB composite of MS 0451.6−0305 with F160W, F110W, and F814W filters, respectively. A percentile value of 99.85 was used to determine the maximum pixel value for the colourscale in the red and green channels, and a value of 99.0 was used in the blue channel. The multiple lensed images of Gal. 2 are indicated with white text. The spectra are extracted from circles with a diameter of 1", indicated in red. The bottom axes of the spectra are labelled in radio velocity, relative to the redshift calculated for each image, as given in Table \ref{table:peaks_zs}. The top axes are in observed frequency (GHz), and the side axes in intensity (Jy/beam).}
     \label{fig:final_oteo}
 \end{figure}
 
@@ -199,15 +210,16 @@ Using the values for $M_{gas}$ from Table \ref{table:gas_mass}, the SFE for each
 Gal & SFE \\
 ID  & $\rm{yr^{-1}}$ \\[0.1cm]
 \hline \\[-0.25cm]
-%2a & $1.02\times 10^{5}$ \\
-2b & $2.04\times 10^{5}$ \\
-2c & $1.93\times 10^{5}$ \\
+2a & $<(3.17 \pm 2.09)\times 10^{-9}$ \\
+2b & $(5.14 \pm 1.56)\times 10^{-9}$  \\
+2c & $(5.09 \pm 1.53)\times 10^{-9}$  \\
 \hline
 \end{tabular}
 \caption{Star formation efficiency as calculated from the delensed gas mass of each image.}
 \label{table:sfe}
 \end{table}
 
+\newpage
 \nocite{*}
 \bibliography{sources}
 
