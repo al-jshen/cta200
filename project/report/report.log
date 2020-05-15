@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2020.5.12)  15 MAY 2020 14:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2020.5.12)  15 MAY 2020 15:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -470,10 +470,10 @@ Package pdftex.def Info: ../figs/perturbations.pdf  used on input line 90.
 <../figs/final.pdf, id=313, 3613.5pt x 2710.125pt>
 File: ../figs/final.pdf Graphic file (type pdf)
 <use ../figs/final.pdf>
-Package pdftex.def Info: ../figs/final.pdf  used on input line 195.
+Package pdftex.def Info: ../figs/final.pdf  used on input line 191.
 (pdftex.def)             Requested size: 519.23723pt x 389.42238pt.
 
-Overfull \hbox (21.18658pt too wide) in paragraph at lines 194--196
+Overfull \hbox (21.18658pt too wide) in paragraph at lines 190--192
 []  [] 
  []
 
@@ -485,7 +485,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.196 ...nd the side axes in intensity (Jy/beam).}
+l.192 ...nd the side axes in intensity (Jy/beam).}
                                                   
 You may provide a definition with
 \DeclareUnicodeCharacter 
@@ -498,7 +498,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.196 ...nd the side axes in intensity (Jy/beam).}
+l.192 ...nd the side axes in intensity (Jy/beam).}
                                                   
 You may provide a definition with
 \DeclareUnicodeCharacter 
@@ -506,18 +506,18 @@ You may provide a definition with
 [8] [9 <../figs/final.pdf>] (./report.bbl) 
 AED: lastpage setting LastPage
 [10]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 226.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 226.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 222.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 222.
  (./report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 226.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 226.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 222.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 222.
 Package rerunfilecheck Info: File `report.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 226.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 222.
  ) 
 Here is how much of TeX's memory you used:
- 7376 strings out of 480608
- 106484 string characters out of 5910020
+ 7375 strings out of 480608
+ 106471 string characters out of 5910020
  387328 words of memory out of 5000000
  23075 multiletter control sequences out of 15000+600000
  543309 words of font info for 66 fonts, out of 8000000 for 9000
@@ -538,10 +538,10 @@ dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type
 ts/cm/cmti8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pf
 b></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/share/t
 exmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb>
-Output written on report.pdf (10 pages, 5428754 bytes).
+Output written on report.pdf (10 pages, 5426658 bytes).
 PDF statistics:
- 427 PDF objects out of 1000 (max. 8388607)
- 218 compressed objects within 3 object streams
- 43 named destinations out of 1000 (max. 500000)
+ 425 PDF objects out of 1000 (max. 8388607)
+ 216 compressed objects within 3 object streams
+ 42 named destinations out of 1000 (max. 500000)
  26 words of extra memory for PDF output out of 10000 (max. 10000000)
 

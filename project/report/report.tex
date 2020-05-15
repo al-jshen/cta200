@@ -63,13 +63,13 @@ where $v$ is the observed frequency and $v_0$ is the rest-frame frequency. In th
 
 Using the calculated spectroscopic redshift, it is possible to convert the observed frequencies into radio velocities. First, the rest frequency of the $^{12}$CO(J=3-2) transition is shifted so velocities are relative to a redshift (ie. the source has zero velocity):
 \begin{align}\label{eqn:restfreq_shift}
-	v_s = \frac{v_0}{z+1},
+	\nu_s = \frac{\nu_0}{z+1},
 \end{align}
 where $v_s$ is the shifted rest frequency, $v_0$ is the unshifted rest frequency, and $z$ is the redshift of the source. Then, the radio velocity is given by 
 \begin{align}\label{eqn:radio_vel}
-	V_{rad} = (1 - \frac{v}{v_s})c,
+	V_{rad} = (1 - \frac{\nu}{\nu_s})c,
 \end{align}
-where $V_{rad}$ is the radio velocity, $v$ and $v_s$ are defined as before, and $c$ is the speed of light. Using the radio velocity, Fig. \ref{fig:velocity_axis} was created. Apart from the x-axis now being labelled with both radio velocity (bottom) and observed frequency (top), it is identical to Fig. \ref{fig:gaussian_fit}.
+where $V_{rad}$ is the radio velocity, $\nu$ and $\nu_s$ are defined as before, and $c$ is the speed of light. Using the radio velocity, Fig. \ref{fig:velocity_axis} was created. Apart from the x-axis now being labelled with both radio velocity (bottom) and observed frequency (top), it is identical to Fig. \ref{fig:gaussian_fit}.
 
 \begin{figure}[!htbp]
     \centering
@@ -98,8 +98,8 @@ For each of the multiple images, the spectrum was perturbed with Gaussian noise 
 \centering
 \begin{tabular}{ccccc}
 \hline \\[-0.25cm]
-Gal & Peak Observed Frequency & Line Width (FWHM) & RMSE & Redshift \\
-ID  & GHz                     & ${\rm km\,s^{-1}}$      &      & \\[0.1cm]
+Gal & Peak Observed Frequency & Line Width (FWHM)  & RMSE    & Redshift \\
+ID  & GHz                     & ${\rm km\,s^{-1}}$ & Jy/beam & \\[0.1cm]
 \hline \\[-0.25cm]
 2a & $88.14 \pm 0.17$\footnote{I know the significant digits are wrong for my uncertainties but I wanted a little more precision (otherwise everything ends up being a single digit later on when the errors propagate).} & $1956 \pm 1314$ & 1.11E-04 & $2.924 \pm 0.008$  \\
 2b & $88.22 \pm 0.08$ & $768 \pm 880$  & 1.15E-04 & $2.920 \pm 0.003$\\
@@ -136,7 +136,7 @@ where $L'_{CO}$ is the line luminosity and $k = 1.381\times 10^{-23}~{\rm J\,K^{
 Gal & $S_{CO(3-2)}\Delta v$ & $D_L$ & $L'_{CO(3-2)}$ \\
 ID  & $\rm{Jy\,km\,s^{-1}}$ & Mpc   & $\rm{K\,km\,s^{-1}\,pc^2}$ \\[0.1cm]
 \hline \\[-0.25cm]
-2a & $<(0.125 \pm 0.081)$ & $(2.464 \pm 0.003)\times 10^{4}$ & $<(5.25 \pm 3.42)\times 10^{9}$ \\
+2a & $<(0.125 \pm 0.081)$ & $(2.464 \pm 0.003)\times 10^{4}$ & $<(6.83 \pm 3.42)\times 10^{9}$ \\
 2b & $0.218 \pm 0.063$ & $(2.460 \pm 0.001)\times 10^{4}$ & $(9.15 \pm 2.64)\times 10^{9}$  \\
 2c & $0.166 \pm 0.047$ & $(2.461 \pm 0.001)\times 10^{4}$ & $(6.96 \pm 1.99)\times 10^{9}$  \\
 \hline
@@ -158,7 +158,7 @@ We can use the conversion factor $\alpha_{CO}$, which gives the ratio of total m
 \end{align}
 where $\alpha_{CO} = 4.6~{\rm M_\odot\,(K\,km\,s^{-1}\,pc^2)^-1}$ for the Milky Way. The gas mass is calculated using the line luminosities calculated for Gal. 2b and 2c and are given in Table \ref{table:gas_mass}.
 
-In order to take into account the effects of gravitational lensing, the amplification factor for each image (from \cite{MacKenzie2014}, also given in Table \ref{table:gas_mass}) due to the lensing is used to calculate the delensed molecular gas mass of each image. Although the amplification factor is with respect to the flux density, all the calculations necessary to go from flux density to the gas mass are linear in the relevant variables (Eqn. \ref{eqn:linelum}, Eqn. \ref{eqn:ground_linelum}, Eqn. \ref{eqn:gas_mass}). Thus, we can directly apply the amplification factor to calculate the delensed gas mass. 
+In order to take into account the effects of gravitational lensing, the amplification factor for each image (from \cite{MacKenzie2014}, also given in Table \ref{table:gas_mass}) due to the lensing is used to calculate the delensed molecular gas mass of each image. Although the amplification factor is with respect to the flux density, all the calculations necessary to go from flux density to the gas mass are linear in the relevant variables (Eqn. \ref{eqn:linelum}, Eqn. \ref{eqn:ground_linelum}, Eqn. \ref{eqn:gas_mass}). Thus, we can directly apply the amplification factor to calculate the delensed gas mass. We find that the delensed gas masses of Gal. 2b and 2c (the images with a detection) are consistent with each other when taking into account the uncertainties. 
 
 \begin{table}[!htbp]
 \centering
@@ -167,7 +167,7 @@ In order to take into account the effects of gravitational lensing, the amplific
 Gal & $L'_{CO(1-0)}$             & Apparent $M_{gas}$ & Amplification & Delensed $M_{gas}$ \\
 ID  & $\rm{K\,km\,s^{-1}\,pc^2}$ & $M_\odot$          &               & $M_\odot$          \\[0.1cm]
 \hline \\[-0.25cm]
-2a & $<(1.94 \pm 1.27)\times 10^{10}$ & $<(8.94 \pm 5.83)\times 10^{10}$ & $2.86 \pm 0.04$ & $<(3.13 \pm 2.04)\times 10^{10}$ \\
+2a & $<(2.53 \pm 1.27)\times 10^{10}$ & $<(1.16 \pm 5.83)\times 10^{11}$ & $2.86 \pm 0.04$ & $<(4.07 \pm 2.04)\times 10^{10}$ \\
 2b & $(3.39 \pm 0.98)\times 10^{10}$  & $(1.56 \pm 0.45)\times 10^{11}$  & $8.1 \pm 0.4$   & $(1.92 \pm 0.56)\times 10^{10}$  \\
 2c & $(2.58 \pm 0.74)\times 10^{10}$  & $(1.19 \pm 0.34)\times 10^{11}$  & $6.1 \pm 0.1$   & $(1.95 \pm 0.56)\times 10^{10}$  \\
 \hline
@@ -176,11 +176,7 @@ ID  & $\rm{K\,km\,s^{-1}\,pc^2}$ & $M_\odot$          &               & $M_\odot
 \label{table:gas_mass}
 \end{table}
 
-To check whether the intrinsic gas masses calculated are consistent with each other across the multiple images, we take the difference between the computed values for Gal. 2b and 2c and normalize it by their average. Doing so, we find that the values are consistent to within 2\%: 
-\begin{align}
-	\frac{|M_{2b} - M_{2c}|}{\frac{M_{2b}+M_{2c}}{2}} = \frac{2.04\times 10^{8}}{1.94 \times 10^{10}} \simeq 1\%
-\end{align}
-where $M_{2b}$ and $M_{2c}$ are the intrinsic molecular gas masses calculated for Gal. 2b and 2c, respectively. 
+
 
 \section*{Wrapping Up}
 
