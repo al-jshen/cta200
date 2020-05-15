@@ -37,7 +37,7 @@ Fig. \ref{fig:initial_spectra} shows the spectra for each of the three multiple 
 
 \begin{figure}[!htbp]
     \centering
-    \includegraphics[width=\linewidth]{../figs/initial_spectra.png}
+    \includegraphics[width=\linewidth]{../figs/initial_spectra.pdf}
 	\caption{Plot of the extracted spectra of the multiple images of Gal. 2. Observed frequency (GHz) is plotted against the intensity (Jy/beam).}
     \label{fig:initial_spectra}
 \end{figure}
@@ -49,7 +49,7 @@ The Levenberg–Marquardt algorithm\footnote{\url{https://en.wikipedia.org/wiki/
 
 \begin{figure}[!htbp]
     \centering
-	\includegraphics[width=0.8\linewidth]{../figs/gaussian_fit.png}
+	\includegraphics[width=0.8\linewidth]{../figs/gaussian_fit.pdf}
 	\caption{Plot of the spectra of each lensed image, with a 1D Gaussian fit in orange.} 
     \label{fig:gaussian_fit}
 \end{figure}
@@ -73,7 +73,7 @@ where $V_{rad}$ is the radio velocity, $v$ and $v_s$ are defined as before, and 
 
 \begin{figure}[!htbp]
     \centering
-    \includegraphics[width=0.8\linewidth]{../figs/velocity_axis_plot.png}
+    \includegraphics[width=0.8\linewidth]{../figs/velocity_axis_plot.pdf}
 	\caption{Plot of the spectra with a 1D Gaussian fit (same as Fig \ref{fig:gaussian_fit}). Bottom x-axis is in radio velocity (km/s) with reference to the redshift to each image. Top x-axis is in observed frequency (GHz). y-axis is in intensity (Jy/beam). Note that the radio velocity increases going to the left, whereas the frequency increases going to the right.}
 	\label{fig:velocity_axis}
 \end{figure}
@@ -87,7 +87,7 @@ For each of the multiple images, the spectrum was perturbed with Gaussian noise 
 
 \begin{figure}[!htbp]
     \centering
-    \includegraphics[width=0.6\linewidth]{../figs/perturbations.png}
+    \includegraphics[width=0.6\linewidth]{../figs/perturbations.pdf}
 	\caption{Plot of 500 realizations of the perturbed spectrum of each multiple image. The distribution of the errors was assumed to be Gaussian with a mean of the measured intensity and a standard deviation of the RMS error.}
 	\label{fig:perturbations}
 \end{figure}
@@ -98,12 +98,12 @@ For each of the multiple images, the spectrum was perturbed with Gaussian noise 
 \centering
 \begin{tabular}{ccccc}
 \hline \\[-0.25cm]
-Gal & Peak Observed Frequency & Line Width & RMSE & Redshift \\
-ID  & GHz                     & FWHM       &      & \\[0.1cm]
+Gal & Peak Observed Frequency & Line Width (FWHM) & RMSE & Redshift \\
+ID  & GHz                     & ${\rm km\,s^{-1}}$      &      & \\[0.1cm]
 \hline \\[-0.25cm]
-2a & 88.14 \pm 0.17\footnote{I know the significant digits are wrong for my uncertainties but I wanted a little more precision (otherwise everything ends up being a single digit later on when the errors propagate).} & 0.58 \pm 0.39 & 1.11E-04 & 2.924 \pm .008  \\
-2b & 88.22 \pm 0.08 & 0.20 \pm 0.26 & 1.15E-04 & 2.920 \pm .003\\
-2c & 88.20 \pm 0.06 & 0.15 \pm 0.40 & 1.08E-04 & 2.921 \pm .002\\
+2a & $88.14 \pm 0.17$\footnote{I know the significant digits are wrong for my uncertainties but I wanted a little more precision (otherwise everything ends up being a single digit later on when the errors propagate).} & $1956 \pm 1314$ & 1.11E-04 & $2.924 \pm 0.008$  \\
+2b & $88.22 \pm 0.08$ & $768 \pm 880$  & 1.15E-04 & $2.920 \pm 0.003$\\
+2c & $88.20 \pm 0.06$ & $502 \pm 1367$ & 1.08E-04 & $2.921 \pm 0.002$\\
 \hline
 \end{tabular}
 \caption{Mean of the Gaussian fit, FWHM line width, RMS error, and redshift for each of the lensed images of Gal. 2.}
@@ -167,18 +167,18 @@ In order to take into account the effects of gravitational lensing, the amplific
 Gal & $L'_{CO(1-0)}$             & Apparent $M_{gas}$ & Amplification & Delensed $M_{gas}$ \\
 ID  & $\rm{K\,km\,s^{-1}\,pc^2}$ & $M_\odot$          &               & $M_\odot$          \\[0.1cm]
 \hline \\[-0.25cm]
-2a & $<(1.94 \pm 1.27)\times 10^{10}$ & $<(8.94 \pm 5.83)\times 10^{10}$ & 2.86 \pm 0.04 & $<(3.13 \pm 2.04)\times 10^{10}$ \\
-2b & $(3.39 \pm 0.98)\times 10^{10}$  & $(1.56 \pm 0.45)\times 10^{11}$  & 8.1 \pm 0.4   & $(1.92 \pm 0.56)\times 10^{10}$  \\
-2c & $(2.58 \pm 0.74)\times 10^{10}$  & $(1.19 \pm 0.34)\times 10^{11}$  & 6.1 \pm 0.1   & $(1.95 \pm 0.56)\times 10^{10}$  \\
+2a & $<(1.94 \pm 1.27)\times 10^{10}$ & $<(8.94 \pm 5.83)\times 10^{10}$ & $2.86 \pm 0.04$ & $<(3.13 \pm 2.04)\times 10^{10}$ \\
+2b & $(3.39 \pm 0.98)\times 10^{10}$  & $(1.56 \pm 0.45)\times 10^{11}$  & $8.1 \pm 0.4$   & $(1.92 \pm 0.56)\times 10^{10}$  \\
+2c & $(2.58 \pm 0.74)\times 10^{10}$  & $(1.19 \pm 0.34)\times 10^{11}$  & $6.1 \pm 0.1$   & $(1.95 \pm 0.56)\times 10^{10}$  \\
 \hline
 \end{tabular}
 \caption{Line luminosity for the ground-state J-transition of $^{12}$CO, apparent gas mass, and intrinsic (delensed) gas mass.}
 \label{table:gas_mass}
 \end{table}
 
-To check whether the intrinsic gas masses calculated are consistent with each other across the multiple images, we take the difference between the computed values for Gal. 2b and 2c and normalize it by their average. Doing so, we find that the values are consistent to within 5\%: 
+To check whether the intrinsic gas masses calculated are consistent with each other across the multiple images, we take the difference between the computed values for Gal. 2b and 2c and normalize it by their average. Doing so, we find that the values are consistent to within 2\%: 
 \begin{align}
-	\frac{|M_{2b} - M_{2c}|}{\frac{M_{2b}+M_{2c}}{2}} = \frac{2.34\times 10^{5}}{5.63 \times 10^{6}} \simeq 4.2\%
+	\frac{|M_{2b} - M_{2c}|}{\frac{M_{2b}+M_{2c}}{2}} = \frac{2.04\times 10^{8}}{1.94 \times 10^{10}} \simeq 1\%
 \end{align}
 where $M_{2b}$ and $M_{2c}$ are the intrinsic molecular gas masses calculated for Gal. 2b and 2c, respectively. 
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2020.5.12)  15 MAY 2020 13:21
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2020.5.12)  15 MAY 2020 14:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -427,11 +427,11 @@ l.36 ... (Gal. 2a, 2b, and 2c) of the MS 0451.6−
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
-<../figs/initial_spectra.png, id=7, 1076.1003pt x 354.123pt>
-File: ../figs/initial_spectra.png Graphic file (type png)
-<use ../figs/initial_spectra.png>
-Package pdftex.def Info: ../figs/initial_spectra.png  used on input line 40.
-(pdftex.def)             Requested size: 472.03123pt x 155.33368pt.
+<../figs/initial_spectra.pdf, id=7, 1076.66364pt x 352.34511pt>
+File: ../figs/initial_spectra.pdf Graphic file (type pdf)
+<use ../figs/initial_spectra.pdf>
+Package pdftex.def Info: ../figs/initial_spectra.pdf  used on input line 40.
+(pdftex.def)             Requested size: 472.03123pt x 154.47318pt.
 
 Overfull \hbox (1.40869pt too wide) in paragraph at lines 45--46
 []\OT1/cmr/m/n/10.95 The Lev-en-berg{Marquardt al-go-rithm[][][][][] from \OT1/
@@ -439,492 +439,35 @@ cmtt/m/n/10.95 astropy.modeling\OT1/cmr/m/n/10.95 , which min-i-mizes the sum o
 f squared
  []
 
-<../figs/gaussian_fit.png, id=14, 722.7pt x 1084.05pt>
-File: ../figs/gaussian_fit.png Graphic file (type png)
-<use ../figs/gaussian_fit.png>
-Package pdftex.def Info: ../figs/gaussian_fit.png  used on input line 52.
+<../figs/gaussian_fit.pdf, id=13, 722.7pt x 1084.05pt>
+File: ../figs/gaussian_fit.pdf Graphic file (type pdf)
+<use ../figs/gaussian_fit.pdf>
+Package pdftex.def Info: ../figs/gaussian_fit.pdf  used on input line 52.
 (pdftex.def)             Requested size: 377.62642pt x 566.43855pt.
 [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <../figs/initial_spectra.pn
-g>] [2 <../figs/gaussian_fit.png>]
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <../figs/initial_spectra.pd
+f>] [2 <../figs/gaussian_fit.pdf>]
 ! Too many }'s.
 l.62 }
       
 You've closed more groups than you opened.
 Such booboos are generally harmless, so keep going.
 
-<../figs/velocity_axis_plot.png, id=49, 722.7pt x 1084.05pt>
-File: ../figs/velocity_axis_plot.png Graphic file (type png)
-<use ../figs/velocity_axis_plot.png>
-Package pdftex.def Info: ../figs/velocity_axis_plot.png  used on input line 76.
+<../figs/velocity_axis_plot.pdf, id=137, 722.7pt x 1084.05pt>
+File: ../figs/velocity_axis_plot.pdf Graphic file (type pdf)
+<use ../figs/velocity_axis_plot.pdf>
+Package pdftex.def Info: ../figs/velocity_axis_plot.pdf  used on input line 76.
 
 (pdftex.def)             Requested size: 377.62642pt x 566.43855pt.
-<../figs/perturbations.png, id=54, 433.62pt x 867.24pt>
-File: ../figs/perturbations.png Graphic file (type png)
-<use ../figs/perturbations.png>
-Package pdftex.def Info: ../figs/perturbations.png  used on input line 90.
+<../figs/perturbations.pdf, id=142, 433.62pt x 867.24pt>
+File: ../figs/perturbations.pdf Graphic file (type pdf)
+<use ../figs/perturbations.pdf>
+Package pdftex.def Info: ../figs/perturbations.pdf  used on input line 90.
 (pdftex.def)             Requested size: 283.22162pt x 566.46503pt.
-! Missing $ inserted.
-<inserted text> 
-                $
-l.104 2a & 88.14 \pm
-                     0.17\footnote{I know the significant digits are wrong f...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Extra }, or forgotten $.
-<template> \unskip \hfil }
-                          \hskip \tabcolsep \endtemplate 
-l.104 ...t later on when the errors propagate).} &
-                                                   0.58 \pm 0.39 & 1.11E-04 ...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.104 ...t later on when the errors propagate).} &
-                                                   0.58 \pm 0.39 & 1.11E-04 ...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.104 ...t later on when the errors propagate).} &
-                                                   0.58 \pm 0.39 & 1.11E-04 ...
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.104 ...n when the errors propagate).} & 0.58 \pm
-                                                   0.39 & 1.11E-04 & 2.924 \...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Extra }, or forgotten $.
-<template> \unskip \hfil }
-                          \hskip \tabcolsep \endtemplate 
-l.104 ...the errors propagate).} & 0.58 \pm 0.39 &
-                                                   1.11E-04 & 2.924 \pm .008...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.104 ...the errors propagate).} & 0.58 \pm 0.39 &
-                                                   1.11E-04 & 2.924 \pm .008...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.104 ...the errors propagate).} & 0.58 \pm 0.39 &
-                                                   1.11E-04 & 2.924 \pm .008...
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.104 ....} & 0.58 \pm 0.39 & 1.11E-04 & 2.924 \pm
-                                                   .008  \\
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Extra }, or forgotten $.
-<template> \unskip \hfil }
-                          \hskip \tabcolsep \endtemplate 
-l.105 2
-       b & 88.22 \pm 0.08 & 0.20 \pm 0.26 & 1.15E-04 & 2.920 \pm .003\\
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.105 2
-       b & 88.22 \pm 0.08 & 0.20 \pm 0.26 & 1.15E-04 & 2.920 \pm .003\\
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.105 2
-       b & 88.22 \pm 0.08 & 0.20 \pm 0.26 & 1.15E-04 & 2.920 \pm .003\\
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.105 2b & 88.22 \pm
-                     0.08 & 0.20 \pm 0.26 & 1.15E-04 & 2.920 \pm .003\\
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Extra }, or forgotten $.
-<template> \unskip \hfil }
-                          \hskip \tabcolsep \endtemplate 
-l.105 2b & 88.22 \pm 0.08 &
-                            0.20 \pm 0.26 & 1.15E-04 & 2.920 \pm .003\\
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.105 2b & 88.22 \pm 0.08 &
-                            0.20 \pm 0.26 & 1.15E-04 & 2.920 \pm .003\\
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.105 2b & 88.22 \pm 0.08 &
-                            0.20 \pm 0.26 & 1.15E-04 & 2.920 \pm .003\\
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.105 2b & 88.22 \pm 0.08 & 0.20 \pm
-                                     0.26 & 1.15E-04 & 2.920 \pm .003\\
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Extra }, or forgotten $.
-<template> \unskip \hfil }
-                          \hskip \tabcolsep \endtemplate 
-l.105 2b & 88.22 \pm 0.08 & 0.20 \pm 0.26 &
-                                            1.15E-04 & 2.920 \pm .003\\
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.105 2b & 88.22 \pm 0.08 & 0.20 \pm 0.26 &
-                                            1.15E-04 & 2.920 \pm .003\\
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.105 2b & 88.22 \pm 0.08 & 0.20 \pm 0.26 &
-                                            1.15E-04 & 2.920 \pm .003\\
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.105 ...08 & 0.20 \pm 0.26 & 1.15E-04 & 2.920 \pm
-                                                   .003\\
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Extra }, or forgotten $.
-<template> \unskip \hfil }
-                          \hskip \tabcolsep \endtemplate 
-l.106 2
-       c & 88.20 \pm 0.06 & 0.15 \pm 0.40 & 1.08E-04 & 2.921 \pm .002\\
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.106 2
-       c & 88.20 \pm 0.06 & 0.15 \pm 0.40 & 1.08E-04 & 2.921 \pm .002\\
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.106 2
-       c & 88.20 \pm 0.06 & 0.15 \pm 0.40 & 1.08E-04 & 2.921 \pm .002\\
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.106 2c & 88.20 \pm
-                     0.06 & 0.15 \pm 0.40 & 1.08E-04 & 2.921 \pm .002\\
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Extra }, or forgotten $.
-<template> \unskip \hfil }
-                          \hskip \tabcolsep \endtemplate 
-l.106 2c & 88.20 \pm 0.06 &
-                            0.15 \pm 0.40 & 1.08E-04 & 2.921 \pm .002\\
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.106 2c & 88.20 \pm 0.06 &
-                            0.15 \pm 0.40 & 1.08E-04 & 2.921 \pm .002\\
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.106 2c & 88.20 \pm 0.06 &
-                            0.15 \pm 0.40 & 1.08E-04 & 2.921 \pm .002\\
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.106 2c & 88.20 \pm 0.06 & 0.15 \pm
-                                     0.40 & 1.08E-04 & 2.921 \pm .002\\
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Extra }, or forgotten $.
-<template> \unskip \hfil }
-                          \hskip \tabcolsep \endtemplate 
-l.106 2c & 88.20 \pm 0.06 & 0.15 \pm 0.40 &
-                                            1.08E-04 & 2.921 \pm .002\\
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.106 2c & 88.20 \pm 0.06 & 0.15 \pm 0.40 &
-                                            1.08E-04 & 2.921 \pm .002\\
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.106 2c & 88.20 \pm 0.06 & 0.15 \pm 0.40 &
-                                            1.08E-04 & 2.921 \pm .002\\
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.106 ...06 & 0.15 \pm 0.40 & 1.08E-04 & 2.921 \pm
-                                                   .002\\
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Extra }, or forgotten $.
-<template> \unskip \hfil }
-                          \hskip \tabcolsep \endtemplate 
-l.107 \hline
-            
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.107 \hline
-            
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.107 \hline
-            
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-[3] [4 <../figs/velocity_axis_plot.png>] [5 <../figs/perturbations.png>]
-[6]
-! Missing $ inserted.
-<inserted text> 
-                $
-l.170 ...(8.94 \pm 5.83)\times 10^{10}$ & 2.86 \pm
-                                                   0.04 & $<(3.13 \pm 2.04)\...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Extra }, or forgotten $.
-<template> \unskip \hfil }
-                          \hskip \tabcolsep \endtemplate 
-l.170 ...pm 5.83)\times 10^{10}$ & 2.86 \pm 0.04 &
-                                                   $<(3.13 \pm 2.04)\times 1...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.170 ...pm 5.83)\times 10^{10}$ & 2.86 \pm 0.04 &
-                                                   $<(3.13 \pm 2.04)\times 1...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.170 ...pm 5.83)\times 10^{10}$ & 2.86 \pm 0.04 &
-                                                   $<(3.13 \pm 2.04)\times 1...
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.171 ...(1.56 \pm 0.45)\times 10^{11}$  & 8.1 \pm
-                                                   0.4   & $(1.92 \pm 0.56)\...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Extra }, or forgotten $.
-<template> \unskip \hfil }
-                          \hskip \tabcolsep \endtemplate 
-l.171 ...m 0.45)\times 10^{11}$  & 8.1 \pm 0.4   &
-                                                   $(1.92 \pm 0.56)\times 10...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.171 ...m 0.45)\times 10^{11}$  & 8.1 \pm 0.4   &
-                                                   $(1.92 \pm 0.56)\times 10...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.171 ...m 0.45)\times 10^{11}$  & 8.1 \pm 0.4   &
-                                                   $(1.92 \pm 0.56)\times 10...
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.172 ...(1.19 \pm 0.34)\times 10^{11}$  & 6.1 \pm
-                                                   0.1   & $(1.95 \pm 0.56)\...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Extra }, or forgotten $.
-<template> \unskip \hfil }
-                          \hskip \tabcolsep \endtemplate 
-l.172 ...m 0.34)\times 10^{11}$  & 6.1 \pm 0.1   &
-                                                   $(1.95 \pm 0.56)\times 10...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.172 ...m 0.34)\times 10^{11}$  & 6.1 \pm 0.1   &
-                                                   $(1.95 \pm 0.56)\times 10...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.172 ...m 0.34)\times 10^{11}$  & 6.1 \pm 0.1   &
-                                                   $(1.95 \pm 0.56)\times 10...
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-[7]
-<../figs/final.png, id=128, 1156.32pt x 867.24pt>
+[3] [4 <../figs/velocity_axis_plot.pdf>] [5 <../figs/perturbations.pdf>]
+[6] [7]
+<../figs/final.png, id=313, 1156.32pt x 867.24pt>
 File: ../figs/final.png Graphic file (type png)
 <use ../figs/final.png>
 Package pdftex.def Info: ../figs/final.png  used on input line 195.
@@ -974,12 +517,12 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 226.
  ) 
 Here is how much of TeX's memory you used:
  7377 strings out of 480608
- 106368 string characters out of 5910020
+ 106464 string characters out of 5910020
  387328 words of memory out of 5000000
  23075 multiletter control sequences out of 15000+600000
  543309 words of font info for 66 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 34i,19n,29p,952b,417s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 34i,18n,29p,952b,415s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fon
 ts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/publi
@@ -995,10 +538,10 @@ dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type
 ts/cm/cmti8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pf
 b></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/share/t
 exmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb>
-Output written on report.pdf (10 pages, 1911935 bytes).
+Output written on report.pdf (10 pages, 1899192 bytes).
 PDF statistics:
- 229 PDF objects out of 1000 (max. 8388607)
- 186 compressed objects within 2 object streams
+ 415 PDF objects out of 1000 (max. 8388607)
+ 210 compressed objects within 3 object streams
  43 named destinations out of 1000 (max. 500000)
  26 words of extra memory for PDF output out of 10000 (max. 10000000)
 
