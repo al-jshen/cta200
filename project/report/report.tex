@@ -113,7 +113,7 @@ ID  & GHz                     & ${\rm km\,s^{-1}}$ & Jy/beam & \\[0.1cm]
 
 \section*{Measuring Line Luminosity}
 
-To obtain the line flux $S_{CO(3-2)}\Delta v$, the areas under the Gaussian curves for each of the spectra were integrated using Simpson's rule with the function \code{scipy.integrate.simps}. For the image without a clear emission detection, the flux was still calculated by integrating under the Gaussian profile, as \cite{Combes2007} finds this to yield results consistent within uncertainties. This was taken to be the upper limit of the line flux. 
+To obtain the line flux $S_{CO(3-2)}\Delta v$, the areas under the Gaussian curves for each of the spectra were integrated using Simpson's rule with the function \code{scipy.integrate.simps}. For the image without a clear emission detection, the flux was not calculated by integrating under the Gaussian profile (although \cite{Combes2007} finds this to yield results consistent within uncertainties). Rather, the $1\sigma$ upper limit from the RMS noise was taken to be the upper limit of the line flux. This was then used in further computations as normal. 
 
 Using the \code{astropy.cosmology} package, the luminosity distances $D_L$ to each of the images was calculated. The assumptions made were:
 \begin{itemize}
