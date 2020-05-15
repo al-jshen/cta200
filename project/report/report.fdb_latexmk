@@ -1,16 +1,16 @@
 # Fdb version 3
-["bibtex report"] 1589502074 "report.aux" "report.bbl" "report" 1589502074
+["bibtex report"] 1589560157 "report.aux" "report.bbl" "report" 1589563298
   "./aasjournal.bst" 1589315522 37930 c2368a73b82a7c192c7ab34d16c71a72 ""
-  "report.aux" 1589501815 7281 d69f45eb4b641367249a3d826e1ed6c4 "pdflatex"
+  "report.aux" 1589563252 7283 ec12d58b842e2615ab56affbbf17f5df "pdflatex"
   "sources.bib" 1589388768 9741 933e32655348aec83a26a104313f9408 ""
   (generated)
-  "report.bbl"
   "report.blg"
-["pdflatex"] 1589502074 "report.tex" "report.pdf" "report" 1589502074
+  "report.bbl"
+["pdflatex"] 1589563298 "report.tex" "report.pdf" "report" 1589563298
   "../figs/final.png" 1589382555 1170401 5e8e538d5332811335e47153c91bf7f2 ""
   "../figs/gaussian_fit.png" 1589223059 83000 62c427a98bcc65446c1386ee7a34bed3 ""
   "../figs/initial_spectra.png" 1589231185 44430 dc2b3868f5ff1cedfe0b654e5e775d20 ""
-  "../figs/perturbations.png" 1589497121 461320 53acf638a3dfb3c48b1fa40398f5b183 ""
+  "../figs/perturbations.png" 1589562471 462272 bcbc19b8c2ba1f9681dfb9095297a0c7 ""
   "../figs/velocity_axis_plot.png" 1589382538 104224 58aee3bbd55bac78f532d9e095aaa964 ""
   "/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1587899213 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1587899213 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -121,12 +121,12 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1587899213 33301 a3134070eacafb10b1f371612ce2650d ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1589321265 4676539 17a6f59e659c7f6742ee68e9a4a9f90e ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1589321261 2513077 3330978d110cf56a8fb16e86ed4d14ac ""
-  "report.aux" 1589501815 7281 d69f45eb4b641367249a3d826e1ed6c4 "pdflatex"
-  "report.bbl" 1589502074 1655 3e7ac1ee6c2cc49f77076ec98716b164 "bibtex report"
-  "report.out" 1589501815 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "report.tex" 1589502073 16209 ab5c59e934b69321565c199ed812ec16 ""
+  "report.aux" 1589563252 7283 ec12d58b842e2615ab56affbbf17f5df "pdflatex"
+  "report.bbl" 1589560157 1655 3e7ac1ee6c2cc49f77076ec98716b164 "bibtex report"
+  "report.out" 1589563251 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "report.tex" 1589563298 16181 c37605a3fb4eb4291630c54e0582f1cc ""
   (generated)
-  "report.aux"
-  "report.out"
-  "report.log"
   "report.pdf"
+  "report.log"
+  "report.out"
+  "report.aux"
