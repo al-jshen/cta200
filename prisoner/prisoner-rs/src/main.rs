@@ -1,4 +1,5 @@
 use rand::thread_rng;
+use std::cell::RefCell;
 use rand::seq::SliceRandom;
 
 struct Cooperator {
@@ -25,127 +26,164 @@ struct TitForTat {
 }
 
 trait Agent {
-    fn new() -> Self;
     fn make_move(&self) -> &str;
+    fn add_points(&mut self, points: u32);
+    fn get_points(&self) -> u32;
+    fn get_class(&self) -> &str;
 }
 
 trait ComplexAgent: Agent {
-    fn add_points(&mut self, points: u32);
     fn reset(&mut self);
 }
 
 impl Agent for Cooperator {
-    fn new() -> Cooperator {
-        Cooperator { points: 0 }
-    }
     fn make_move(&self) -> &str {
         "cooperate"
+    }
+    fn add_points(&mut self, points: u32) {
+        self.points += points;
+    }
+    fn get_points(&self) -> u32 {
+        self.points
+    }
+    fn get_class(&self) -> &str {
+        "cooperator"
     }
 }
 
 impl Agent for Defector {
-    fn new() -> Defector {
-        Defector { points: 0 }
-    }
     fn make_move(&self) -> &str {
         "defect"
+    }
+    fn add_points(&mut self, points: u32) {
+        self.points += points;
+    }
+    fn get_points(&self) -> u32 {
+        self.points
+    }
+    fn get_class(&self) -> &str {
+        "defector"
     }
 }
 
 impl Agent for Random {
-    fn new() -> Random {
-        Random {
-            points: 0,
-            choices: ["cooperate".to_string(), "defect".to_string()],
-        }
-    }
     fn make_move(&self) -> &str {
         &self.choices.choose(&mut thread_rng()).unwrap()
+    }
+    fn add_points(&mut self, points: u32) {
+        self.points += points;
+    }
+    fn get_points(&self) -> u32 {
+        self.points
+    }
+    fn get_class(&self) -> &str {
+        "random"
     }
 }
 
 impl Agent for Resentful {
-    fn new() -> Resentful {
-        Resentful {
-            points: 0,
-            next_move: "cooperate".to_string(),
-        }
-    }
     fn make_move(&self) -> &str {
         &self.next_move
     }
-}
-
-impl ComplexAgent for Resentful {
     fn add_points(&mut self, points: u32) {
         self.points += points;
         if points < 2 {
             self.next_move = "defect".to_string();
-        }
+        };
     }
+    fn get_points(&self) -> u32 {
+        self.points
+    }
+    fn get_class(&self) -> &str {
+        "resentful"
+    }
+}
+
+impl ComplexAgent for Resentful {
     fn reset(&mut self) {
         self.next_move = "cooperate".to_string();
     }
 }
 
 impl Agent for TitForTat {
-    fn new() -> TitForTat {
-        TitForTat {
-            points: 0,
-            next_move: "cooperate".to_string(),
-        }
-    }
     fn make_move(&self) -> &str {
         &self.next_move
     }
-}
-
-impl ComplexAgent for TitForTat {
     fn add_points(&mut self, points: u32) {
         self.points += points;
         if points < 2 {
             self.next_move = "defect".to_string();
         } else {
             self.next_move = "cooperate".to_string();
-        }
+        };
     }
+    fn get_points(&self) -> u32 {
+        self.points
+    }
+    fn get_class(&self) -> &str {
+        "titfortat"
+    }
+}
+
+impl ComplexAgent for TitForTat {
     fn reset(&mut self) {
         self.next_move = "cooperate".to_string();
     }
 }
 
-struct Tournament<T: Agent> {
-    p1: T,
-    p2: T
+
+struct Tournament {
+    players: Vec<RefCell<Box<dyn Agent>>>,
 }
 
-impl<T: Agent> Tournament<T> {
-    fn new(p1: T, p2: T) -> Tournament<T> {
-        p1.reset();
-        p2.reset();
-        Tournament {
-            p1,
-            p2
+impl Tournament {
+    fn play_round(&self, p1idx: usize, p2idx: usize) {
+        let mut p1 = self.players[p1idx].borrow_mut();
+        let mut p2 = self.players[p2idx].borrow_mut();
+        let p1move = p1.make_move();
+        let p2move = p2.make_move();
+        if p1move == p2move && p1move == "cooperate" {
+            p1.add_points(3);
+            p2.add_points(3);
+        } else if p1move == p2move && p1move == "defect" {
+            p1.add_points(1);
+            p2.add_points(1);
+        } else if p1move == "defect" {
+            p1.add_points(5);
+            p2.add_points(0);
+        } else if p2move == "defect" { 
+            p1.add_points(0);
+            p2.add_points(5);
         }
     }
-    fn add_points(&mut self, p1points: u32, p2points: u32) {
-        self.p1.add_points(p1points);
-        self.p2.add_points(p2points);
+    fn get_size(&self) -> usize {
+        self.players.len()
     }
-    fn play_round(&self) {
-        let p1move = self.p1.make_move();
-        let p2move = self.p2.make_move();
-        if p1move == p2move && p1move == "cooperate" {
-            self.add_points(3, 3);
-        } else if p1move == p2move && p1move == "defect" {
-            self.add_points(1, 1);
-        } else if p1move == "defect" {
-            self.add_points(5, 0);
-        } else if p2move == "defect" { 
-            self.add_points(0, 5);
+    fn get_scores(&self) {
+        for i in 0..self.get_size() {
+            let player = self.players[i as usize].borrow();
+            println!("{}: \t {}", player.get_class(), player.get_points());
         }
     }
 }
+
 
 fn main() {
+    let tourn: Tournament = Tournament {
+        players: vec![
+            RefCell::new(Box::new(Cooperator { points: 0 })),
+            RefCell::new(Box::new(Defector { points: 0 })),
+            RefCell::new(Box::new(Random { points: 0, choices: ["cooperate".to_string(), "defect".to_string()]})),
+            RefCell::new(Box::new(Resentful { points: 0, next_move: "cooperate".to_string() })),
+            RefCell::new(Box::new(TitForTat { points: 0, next_move: "cooperate".to_string() })),
+        ]
+    };
+    for i in 0..tourn.get_size() {
+        for j in i+1..tourn.get_size() {
+            for _ in 0..1000 {
+                tourn.play_round(i as usize, j as usize);
+            }
+        }
+    };
+    tourn.get_scores();
 }
