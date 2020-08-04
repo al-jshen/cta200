@@ -1,6 +1,7 @@
 use rand::thread_rng;
 use std::cell::RefCell;
 use rand::seq::SliceRandom;
+use std::time::Instant;
 
 struct Cooperator {
     points: u32,
@@ -169,6 +170,7 @@ impl Tournament {
 
 
 fn main() {
+    let now = Instant::now();
     let tourn: Tournament = Tournament {
         players: vec![
             RefCell::new(Box::new(Cooperator { points: 0 })),
@@ -179,11 +181,14 @@ fn main() {
         ]
     };
     for i in 0..tourn.get_size() {
-        for j in i+1..tourn.get_size() {
-            for _ in 0..1000 {
-                tourn.play_round(i as usize, j as usize);
+        for j in 0..tourn.get_size() {
+            if i != j {
+                for _ in 0..1000000 {
+                    tourn.play_round(i as usize, j as usize);
+                }
             }
         }
     };
     tourn.get_scores();
+    println!("{}", now.elapsed().as_secs_f64());
 }
